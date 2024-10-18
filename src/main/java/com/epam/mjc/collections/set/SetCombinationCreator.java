@@ -9,9 +9,14 @@ public class SetCombinationCreator {
         for (String value: firstSet) {
             if (secondSet.contains(value)&&!(thirdSet.contains(value))){
                 resultSet.add(value);
+                secondSet.remove(value);
             } else if(secondSet.contains(value)){
                 thirdSet.remove(value);
-            }
+                secondSet.remove(value);
+            } else thirdSet.remove(value);
+        }
+        for (String value: secondSet) {
+            thirdSet.remove(value);
         }
         resultSet.addAll(thirdSet);
         return resultSet;

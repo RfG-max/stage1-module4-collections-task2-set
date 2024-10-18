@@ -2,6 +2,7 @@ package com.epam.mjc.collections.set;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class HashSetCreator {
     public HashSet<Integer> createHashSet(List<Integer> sourceList) {
@@ -11,7 +12,7 @@ public class HashSetCreator {
                 while((value%2) == 0){
                     resultSet.add(value);
                     value=value/2;
-                    if(!((value%2) == 0)){
+                    if((value%2) != 0){
                         resultSet.add(value);
                     }
                 }
